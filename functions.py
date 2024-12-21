@@ -1,9 +1,11 @@
 import pandas as pd
 
+#Function to load the model
 def load_model():
     model = joblib.load('model/model.pkl')
     import joblib
 
+#Function to preprocesss the planned delivery and actual delivery dates and calcuate the delivet delay
 def process_delivery_dates(planned_delivery_date,actual_delivery_date):
     planned_delivery_date=pd.to_datetime(planned_delivery_date)
     actual_delivery_date=pd.to_datetime(actual_delivery_date)
@@ -11,6 +13,7 @@ def process_delivery_dates(planned_delivery_date,actual_delivery_date):
 
     return delay_days
 
+#Function to preprocess the shipment date column
 def process_shipment_date(shipment_date):
     shipment_date=pd.to_datetime(shipment_date)
     shipment_year=shipment_date.year
@@ -19,6 +22,7 @@ def process_shipment_date(shipment_date):
 
     return shipment_year,shipment_month,shipment_day
 
+#Function to preprocess the origin input and map to the appropriate value
 def process_origin(origin):
     origin_input=0.0
 
@@ -45,6 +49,7 @@ def process_origin(origin):
 
     return origin_input
 
+#Function to preprocess the destination input and map to the appropriate value
 def process_destination(destination):
     dest_input=0.0
 
@@ -71,6 +76,7 @@ def process_destination(destination):
     
     return dest_input
 
+#Function to preprocess the Weather input
 def process_weather(weather):
     weather_conditions_fog=0
     weather_conditions_rain=0
@@ -85,6 +91,7 @@ def process_weather(weather):
 
     return weather_conditions_fog,weather_conditions_rain,weather_conditions_storm
 
+#Function to preprocess the Traffic input
 def process_traffic(traffic):
     traffic_conditions_light=0
     traffic_conditions_moderate=0
@@ -96,6 +103,7 @@ def process_traffic(traffic):
 
     return traffic_conditions_light,traffic_conditions_moderate
 
+#Function to preprocess the vehicle type input
 def process_vehicle_type(vehicle):
     vehicle_lorry=0
     vehicle_truck=0
