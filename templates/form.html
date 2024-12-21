@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipment Delay Form</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Shipment Details</h1>
+        <form action="/predict" method="post">
+            <label for="origin">Origin City:</label>
+            <select id="origin" name="origin" required>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Lucknow">Lucknow</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Pune">Pune</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Hyderabad">Hyderabad</option>
+            </select><br><br>
+
+            <label for="destination">Destination City:</label>
+            <select id="destination" name="destination" required>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Lucknow">Lucknow</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Pune">Pune</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Hyderabad">Hyderabad</option>
+            </select><br><br>
+
+            
+            <label for="shipment_date">Shipment Date:</label>
+            <input type="date" id="shipment_date" name="shipment_date" required><br><br>
+            
+            <label for="planned_delivery_date">Planned Delivery Date:</label>
+            <input type="date" id="planned_delivery_date" name="planned_delivery_date" required><br><br>
+            
+            <label for="actual_delivery_date">Actual Delivery Date:</label>
+            <input type="date" id="actual_delivery_date" name="actual_delivery_date" required><br><br>
+            
+            <label for="vehicle">Vehicle Type:</label>
+            <select id="vehicle" name="vehicle" required>
+                <option value="Truck">Truck</option>
+                <option value="Lorry">Lorry</option>
+                <option value="Container">Container</option>
+                <option value="Trailer">Trailer</option>
+            </select><br><br>
+
+
+
+            <label for="distance">Distance (in km):</label>
+            <input type="number" id="distance" name="distance" required><br><br>
+
+            <label for="weather">Weather Conditions:</label>
+            <select id="weather" name="weather" required>
+                <option value="Light">Clear</option>
+                <option value="Rain">Rain</option>
+                <option value="Fog">Fog</option>
+                <option value="Storm">Storm</option>
+            </select><br><br>
+
+            <label for="traffic">Traffic Conditions:</label>
+            <select id="traffic" name="traffic" required>
+                <option value="Light">Light</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Heavy">Heavy</option>
+            </select><br><br>
+
+            <button type="submit" class="button">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
