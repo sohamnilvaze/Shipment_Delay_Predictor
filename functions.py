@@ -4,7 +4,7 @@ def load_model():
     model = joblib.load('model/model.pkl')
     import joblib
 
-def process_delivery_dates(planned_delivery_dates,actual_delivery_dates):
+def process_delivery_dates(planned_delivery_date,actual_delivery_date):
     planned_delivery_date=pd.to_datetime(planned_delivery_date)
     actual_delivery_date=pd.to_datetime(actual_delivery_date)
     delay_days=(actual_delivery_date - planned_delivery_date).days
